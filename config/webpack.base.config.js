@@ -16,7 +16,7 @@ module.exports = (env = {}) => {
         publicPath: '/',
       },
       resolve: {
-        extensions: ['.js', '.jsx', ],
+        extensions: ['.js', '.jsx'],
         alias: {
           '@src': path.resolve(__dirname, '../src'),
         },
@@ -40,25 +40,18 @@ module.exports = (env = {}) => {
           },
           {
             test: /\.css$/,
-            use: [
-              NODE_ENV === 'production'
-                ? MiniCssExtractPlugin.loader
-                : 'style-loader',
-              'css-loader',
-            ],
+            use: [NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'],
           },
           {
             test: /\.s(a|c)ss$/,
             use: [
-              NODE_ENV === 'production'
-                ? MiniCssExtractPlugin.loader
-                : 'style-loader',
+              NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
               'css-loader',
               'sass-loader',
             ],
           },
           {
-            test: /\.(png|svg|jpg|gif)$/,
+            test: /\.(png|jpg|gif)$/,
             use: ['file-loader'],
           },
           {
@@ -66,8 +59,12 @@ module.exports = (env = {}) => {
             use: ['url-loader?limit=10000'],
           },
           {
-            test: /\.(ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+            test: /\.(ttf|eot)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
             use: ['file-loader'],
+          },
+          {
+            test: /\.svg$/,
+            use: ['@svgr/webpack', 'url-loader'],
           },
         ],
       },
@@ -91,7 +88,7 @@ module.exports = (env = {}) => {
           'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
         }),
       ],
-      devtool: NODE_ENV === 'production' ? '' : 'eval-source-map',
+      devtool: 'eval-source-map',
     },
   ]);
 };
