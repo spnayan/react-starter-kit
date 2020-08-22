@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 import PrivateRoute from '@src/components/common/PrivateRoute';
 import indexRoutes from './routes';
 
@@ -17,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default hot(module)(App);

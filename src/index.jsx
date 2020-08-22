@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { AppContainer } from 'react-hot-loader';
 import { ConnectedRouter } from 'connected-react-router';
 import App from './app';
 import Loader from './components/common/Loader';
@@ -14,15 +13,13 @@ const { persistor, store } = configureStore();
 
 function render(Component) {
   ReactDOM.render(
-    <AppContainer warnings={false}>
-      <Provider store={store}>
-        <PersistGate loading={<Loader />} persistor={persistor}>
-          <ConnectedRouter history={history}>
-            <Component />
-          </ConnectedRouter>
-        </PersistGate>
-      </Provider>
-    </AppContainer>,
+    <Provider store={store}>
+      <PersistGate loading={<Loader />} persistor={persistor}>
+        <ConnectedRouter history={history}>
+          <Component />
+        </ConnectedRouter>
+      </PersistGate>
+    </Provider>,
     document.getElementById('app'),
   );
 }

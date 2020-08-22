@@ -11,13 +11,14 @@ module.exports = (env = {}) => {
   const { NODE_ENV } = env;
   return merge([
     {
-      entry: ['@babel/polyfill', APP_DIR],
+      entry: ['react-hot-loader/patch', '@babel/polyfill', APP_DIR],
       output: {
         publicPath: '/',
       },
       resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
+          'react-dom': '@hot-loader/react-dom',
           '@src': path.resolve(__dirname, '../src'),
         },
       },
