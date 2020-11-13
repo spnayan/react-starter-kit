@@ -2,6 +2,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
 import loginUser from '../services/login';
 import loginActions, { Types } from '../actions/login';
+import toastActions from '../actions/toast';
 
 export function* loginRequest(action) {
   try {
@@ -12,6 +13,7 @@ export function* loginRequest(action) {
     yield put(push('/'));
   } catch (error) {
     yield put(loginActions.loginFailure());
+    yield put(toastActions.error({ message: error?.response?.data?.message }));
   }
 }
 
@@ -20,6 +22,7 @@ function* logoutRequest() {
     localStorage.clear();
     yield put(loginActions.logoutSuccess());
     yield put(push('/login'));
+    yield put(toastActions.success({ message: 'You logged out successfully.' }));
   } catch (error) {
     yield put(loginActions.logoutFailure());
   }

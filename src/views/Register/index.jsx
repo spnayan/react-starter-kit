@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import loginActions from '@src/actions/login';
+import registerActions from '@src/actions/register';
 import Loader from '@src/components/common/Loader';
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
+      email: '',
+      phone: '',
       password: '',
     };
   }
@@ -26,16 +28,16 @@ class Login extends Component {
   handleLogin = (e) => {
     e.preventDefault();
     const {
-      state: { username, password },
-      props: { loginRequest },
+      //   state: { username, password, email, phone },
+      props: { registerUserRequest },
     } = this;
 
-    loginRequest({ username, password });
+    registerUserRequest({ ...this.state });
   };
 
   render() {
     const {
-      state: { username, password },
+      state: { username, password, email, phone },
       props: { loading },
       handleInputChange,
 
@@ -50,7 +52,6 @@ class Login extends Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 className="text-center login-title">Login to continue to Bootsnipp</h1>
             <div className="account-wall">
               <img
                 className="profile-img"
@@ -68,6 +69,22 @@ class Login extends Component {
                   required
                 />
                 <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Phone"
+                  name="phone"
+                  value={phone}
+                  onChange={handleInputChange}
+                />
+                <input
                   type="password"
                   className="form-control"
                   placeholder="Password"
@@ -77,11 +94,11 @@ class Login extends Component {
                   required
                 />
                 <button className="btn btn-lg btn-primary btn-block" type="submit">
-                  Login
+                  Register
                 </button>
                 <span className="clearfix" />
-                <Link className="btn btn-lg btn-primary btn-block mt-10" to="/register">
-                  Register
+                <Link className="btn btn-lg btn-primary btn-block mt-10" to="/login">
+                  Login
                 </Link>
               </form>
             </div>
@@ -92,14 +109,14 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = {
-  loginRequest: PropTypes.func.isRequired,
+Register.propTypes = {
+  registerUserRequest: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => {
   const {
-    login: { loading },
+    register: { loading },
   } = state;
   return {
     loading,
@@ -107,7 +124,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  loginRequest: (payload) => dispatch(loginActions.loginRequest(payload)),
+  registerUserRequest: (payload) => dispatch(registerActions.registerUserRequest(payload)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
