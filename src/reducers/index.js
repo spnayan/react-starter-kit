@@ -4,10 +4,12 @@ import history from '../utils/history';
 import login from './login';
 import register from './register';
 import toast from './toast';
+import topic from './topic';
 
 export default combineReducers({
   router: connectRouter(history),
   login,
   register,
   toast,
+  topic,
 });

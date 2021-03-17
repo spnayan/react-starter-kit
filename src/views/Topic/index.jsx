@@ -1,5 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { totalTopicsSelector, selectedTopicsSelector, percentOfSelectionSelector } from '@src/selectors/topic';
+import { Creators } from '@src/actions/topic';
+import './styles.scss';
 
-export default function Topic() {
-  return <h1>Topic</h1>;
-}
+const { addTopic, selectTopic } = Creators;
+
+const Topic = () => {
+  const topics = useSelector((state) => state.topic.topics);
+  const [topicInput, setTopicInput] = useState('');
+  const totalTopics = useSelector(totalTopicsSelector);
+  const selectedTopics = useSelector(selectedTopicsSelector);
+  const percentOfSelection = useSelector(percentOfSelectionSelector);
+  const dispatch = useDispatch();
+
+  return (
+    <div className="container">
+      <h1>Topic</h1>
+
+      <input
+        type="text"
+        placeholder="Add Topic"
+        value={topicInput}
+        onChange={(e) => setTopicInput(e.target.value)}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter' && topicInput) {
+            dispatch(addTopic(topicInput));
+            setTopicInput('');
+          }
+        }}
+      />
+
+      {topics.map(({ id, title, checked }) => (
+        <div className="list-item" key={id}>
+          <input id={id} type="checkbox" checked={checked} onChange={(e) => dispatch(selectTopic(e))} />
+          <span>{title}</span>
+        </div>
+      ))}
+
+      <hr />
+
+      <div className="info-item">
+        <p>
+          Selected Topics: <span>{selectedTopics}</span>
+        </p>
+        <p>
+          Total Topic: <span>{totalTopics}</span>
+        </p>
+        <p>
+          Percent of selection: <span>{percentOfSelection}%</span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Topic;
