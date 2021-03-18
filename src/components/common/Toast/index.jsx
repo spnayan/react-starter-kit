@@ -6,7 +6,7 @@ import toastActions from '@src/actions/toast';
 function Toast({ type, message, clearToast }) {
   useEffect(() => {
     if (type && message) setTimeout(clearToast, 5000);
-  }, [type, message]);
+  }, [type, message, clearToast]);
 
   if (type && typeof message === 'string') {
     return (
