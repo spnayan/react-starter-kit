@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import registerActions from '@src/actions/register';
-import Loader from '@src/components/common/Loader';
+import registerActions from '@Actions/register';
+import Loader from '@Components/common/Loader';
 
 class Register extends Component {
   constructor(props) {

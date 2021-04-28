@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import loginActions from '@src/actions/login';
-import Loader from '@src/components/common/Loader';
+import loginActions from '@Actions/login';
+import Loader from '@Components/common/Loader';
 
 class Login extends Component {
   constructor(props) {

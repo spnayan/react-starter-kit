@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { totalTopicsSelector, selectedTopicsSelector, percentOfSelectionSelector } from '@src/selectors/topic';
-import { Creators } from '@src/actions/topic';
+import { Creators } from '@Actions/topic';
 import './styles.scss';
 
 const { addTopic, selectTopic } = Creators;

@@ -1,5 +1,5 @@
 import { createReducer } from 'reduxsauce';
-import { Types } from '../actions/toast';
+import { Types } from '@Actions/toast';
 
 const successToast = (_, action) => ({ type: 'success', message: action.payload.message });
 

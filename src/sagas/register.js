@@ -1,8 +1,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import registerUser from '../services/register';
-import registerActions, { Types } from '../actions/register';
-import toastActions from '../actions/toast';
+import registerUser from '@Services/register';
+import registerActions, { Types } from '@Actions/register';
+import toastActions from '@Actions/toast';
 
 export function* registerUserRequest(action) {
   try {

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { createReducer } from 'reduxsauce';
-import { Types } from '../actions/topic';
+import { Types } from '@Actions/topic';
 
 const initialState = {
   topics: [
