@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
@@ -20,6 +22,13 @@ module.exports = (env = {}) => {
         alias: {
           'react-dom': '@hot-loader/react-dom',
           '@src': path.resolve(__dirname, '../src'),
+          '@Components': path.resolve(__dirname, '..', 'src', 'components'),
+          '@Assets': path.resolve(__dirname, '..', 'src', 'assets'),
+          '@Actions': path.resolve(__dirname, '..', 'src', 'actions'),
+          '@Services': path.resolve(__dirname, '..', 'src', 'services'),
+          '@Sagas': path.resolve(__dirname, '..', 'src', 'sagas'),
+          '@Reducers': path.resolve(__dirname, '..', 'src', 'reducers'),
+          // App: path.join(__dirname, '..', 'src'),
         },
       },
       module: {

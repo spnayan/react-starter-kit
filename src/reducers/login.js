@@ -1,6 +1,6 @@
 import { createReducer } from 'reduxsauce';
+import { Types } from '@Actions/login';
 import persist from '../utils/persist';
-import { Types } from '../actions/login';
 
 const initialState = {
   loading: false,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import loginActions from '@src/actions/login';
+import loginActions from '@Actions/login';
 
 function Dashboard({ username = 'John Doe', logoutRequest }) {
   return (

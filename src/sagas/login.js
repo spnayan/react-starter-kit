@@ -1,8 +1,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import loginUser from '../services/login';
-import loginActions, { Types } from '../actions/login';
-import toastActions from '../actions/toast';
+import loginUser from '@Services/login';
+import loginActions, { Types } from '@Actions/login';
+import toastActions from '@Actions/toast';
 
 export function* loginRequest(action) {
   try {

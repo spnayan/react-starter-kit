@@ -1,5 +1,5 @@
 import { createReducer } from 'reduxsauce';
-import { Types } from '../actions/register';
+import { Types } from '@Actions/register';
 
 const initialState = {
   loading: false,

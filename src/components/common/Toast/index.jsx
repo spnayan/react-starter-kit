@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import toastActions from '@src/actions/toast';
+import toastActions from '@Actions/toast';
 
 function Toast({ type, message, clearToast }) {
   useEffect(() => {

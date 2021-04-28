@@ -2,8 +2,8 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import { Switch, Route } from 'react-router-dom';
-import PrivateRoute from '@src/components/common/PrivateRoute';
-import Toast from '@src/components/common/Toast';
+import PrivateRoute from '@Components/common/PrivateRoute';
+import Toast from '@Components/common/Toast';
 import indexRoutes from './routes';
 
 function generateRoutes(routes) {
