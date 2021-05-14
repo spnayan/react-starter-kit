@@ -13,7 +13,7 @@ const initialState = {
 
 const handleTopicAdd = (state, action) => {
   const { payload } = action;
-  const topics = [...state.topics, { id: state.topics.length + 1, title: payload, checked: false }];
+  const topics = [...state.topics, { id: state?.topics?.length + 1, title: payload, checked: false }];
   return {
     ...state,
     topics,
@@ -31,9 +31,15 @@ const handleTopicSelect = (state, action) => {
     topics,
   };
 };
+const getTopicSuccess = (state) => {
+  return {
+    ...state,
+  };
+};
 
 const topicReducer = createReducer(initialState, {
   [Types.ADD_TOPIC]: handleTopicAdd,
+  [Types.GET_TOPIC_SUCCESS]: getTopicSuccess,
   [Types.SELECT_TOPIC]: handleTopicSelect,
 });
 
