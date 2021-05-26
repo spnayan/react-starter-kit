@@ -36,6 +36,9 @@ function App() {
           <li>
             <Link to="/topics">Topic</Link>
           </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
         </ul>
       </nav>
       {generateRoutes(indexRoutes)}
