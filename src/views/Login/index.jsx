@@ -47,7 +47,7 @@ class Login extends Component {
     }
 
     return (
-      <div className="container">
+      <div>
         <div className="row">
           <div className="col-sm-6 col-md-4 col-md-offset-4">
             <h1 className="text-center login-title">Login to continue to Bootsnipp</h1>

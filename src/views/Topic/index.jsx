@@ -20,7 +20,7 @@ const Topic = () => {
   // eslint-disable-next-line no-console
   console.log(isLoading, 'isloading');
   return (
-    <div className="container">
+    <div>
       <h1>Topic</h1>
 
       <input

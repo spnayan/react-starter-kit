@@ -6,6 +6,7 @@ import register from './register';
 import toast from './toast';
 import topic from './topic';
 import loader from './loader.reducer';
+import loadersample from './loadersample';
 
 export default combineReducers({
   router: connectRouter(history),
@@ -14,4 +15,5 @@ export default combineReducers({
   toast,
   topic,
   loader,
+  loadersample,
 });
