@@ -11,7 +11,8 @@
         "@Actions/*": ["src/actions/*"],
         "@Services/*": ["src/services/*"],
         "@Sagas/*": ["src/sagas/*"],
-        "@Reducers/*": ["src/reducers/*"]
+        "@Reducers/*": ["src/reducers/*"],
+        "@Utils/*": ["src/utils/*"]
         // "App/*": ["src/*"]
       }
     },

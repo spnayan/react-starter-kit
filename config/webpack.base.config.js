@@ -28,6 +28,7 @@ module.exports = (env = {}) => {
           '@Services': path.resolve(__dirname, '..', 'src', 'services'),
           '@Sagas': path.resolve(__dirname, '..', 'src', 'sagas'),
           '@Reducers': path.resolve(__dirname, '..', 'src', 'reducers'),
+          '@Utils': path.resolve(__dirname, '..', 'src', 'utils'),
           // App: path.join(__dirname, '..', 'src'),
         },
       },
