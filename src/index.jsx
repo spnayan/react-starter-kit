@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ConnectedRouter } from 'connected-react-router';
+import ErrorBoundary from '@Components/common/ErrorBoundary/index';
 import App from './app';
 import Loader from './components/common/Loader';
 import configureStore from './store';
@@ -15,9 +16,11 @@ function render(Component) {
   ReactDOM.render(
     <Provider store={store}>
       <PersistGate loading={<Loader />} persistor={persistor}>
-        <ConnectedRouter history={history}>
-          <Component />
-        </ConnectedRouter>
+        <ErrorBoundary>
+          <ConnectedRouter history={history}>
+            <Component />
+          </ConnectedRouter>
+        </ErrorBoundary>
       </PersistGate>
     </Provider>,
     document.getElementById('app'),
