@@ -24,14 +24,16 @@
 ### Custom Hooks 
 
 ```
-  - usePagination (Used for Working on Pagination Easily without Writing all the Logic repetitively).
+  - usePagination (Used for Working on Pagination Easily without Writing all the Logic 
+                  repetitively).
 
 
 ```
 ### Usefull Util Functions 
 
 ```
-  - sortByKey (Used for sorting any array of object with a key given to it and the key can be made dynamic aswell).
+  - sortByKey (Used for sorting any array of object with a key given to it and 
+              the key can be made dynamic aswell).
 
 
 ```
