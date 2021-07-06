@@ -33,7 +33,7 @@ const usePagination = (data, itemsPerPage) => {
     setAllData(data);
   }, [data]);
 
-  const handelSorting = (title) => {
+  const handleSorting = (title) => {
     let newList = [];
     if (title === headerToSort) {
       if (sortAssending) {
@@ -62,7 +62,7 @@ const usePagination = (data, itemsPerPage) => {
     begin,
     end,
     currentList,
-    handelSorting,
+    handleSorting,
   };
 };
 
