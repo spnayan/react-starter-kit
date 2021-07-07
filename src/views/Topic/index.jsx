@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { totalTopicsSelector, selectedTopicsSelector, percentOfSelectionSelector } from '@src/selectors/topic';
-import { Creators, Types as TopicTypes } from '@Actions/topic';
+import { Creators } from '@Actions/topic';
 import './styles.scss';
-import { checkIfLoading } from '@src/utils/loaderSelector';
 
 const { addTopic, selectTopic } = Creators;
 
@@ -16,9 +15,6 @@ const Topic = () => {
   const { getTopicRequest } = Creators;
   const dispatch = useDispatch();
 
-  const isLoading = useSelector((state) => checkIfLoading(state, TopicTypes.GET_TOPIC_REQUEST));
-  // eslint-disable-next-line no-console
-  console.log(isLoading, 'isloading');
   return (
     <div>
       <h1>Topic</h1>

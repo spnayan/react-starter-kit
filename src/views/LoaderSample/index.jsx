@@ -16,7 +16,7 @@ function Index({ getDashboardRequest, getMoreContentRequest, randomCharacters, r
 
   useEffect(() => {
     getDashboardRequest();
-  }, []);
+  }, [getDashboardRequest]);
 
   return (
     <div className="wrapper">
