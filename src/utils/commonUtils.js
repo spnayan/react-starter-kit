@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 /**
  *
  * Check if an object or an array is empty.

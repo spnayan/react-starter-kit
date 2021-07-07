@@ -1,6 +1,6 @@
 /**
  *
- * An asynchronous function to convert file object to base64 format.
+ * An async function to convert file object to base64 format.
  *
  * @param {object} file - file object
  * @returns a promise, when resolved, gives base64 string.
