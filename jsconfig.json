@@ -6,12 +6,14 @@
     "baseUrl": "./",
     "paths": {
       // "Config/*": ["src/config/*"],
-      "@Components/*": ["src/components/*"],
-      "@Assets/*": ["src/assets/*"],
       "@Actions/*": ["src/actions/*"],
-      "@Services/*": ["src/services/*"],
-      "@Sagas/*": ["src/sagas/*"],
+      "@Assets/*": ["src/assets/*"],
+      "@Components/*": ["src/components/*"],
+      "@Hooks/*": ["src/hooks/*"],
       "@Reducers/*": ["src/reducers/*"],
+      "@Sagas/*": ["src/sagas/*"],
+      "@Selectors/*": ["src/selectors/*"],
+      "@Services/*": ["src/services/*"],
       "@Utils/*": ["src/utils/*"]
       // "App/*": ["src/*"]
     }

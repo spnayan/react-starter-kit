@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { totalTopicsSelector, selectedTopicsSelector, percentOfSelectionSelector } from '@src/selectors/topic';
+import { totalTopicsSelector, selectedTopicsSelector, percentOfSelectionSelector } from '@Selectors/topic';
 import { Creators } from '@Actions/topic';
 import './styles.scss';
 
