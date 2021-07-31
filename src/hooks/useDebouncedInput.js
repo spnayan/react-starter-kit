@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from 'react';
 
-// beware of using this function out of this hook
-// might not fit your use case ¯\_(ツ)_/¯
 function debounce(func, timeout = 300) {
   let timer;
   return (arg) => {
