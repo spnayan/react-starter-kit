@@ -1,6 +1,6 @@
 ### Quick start
 
-1.  Clone repo using `git clone https://github.com/naxa-developers/<Your Project> `
+1.  Clone repo using `git clone https://github.com/naxa-developers/<Your Project>`
 2.  Run `npm i` in order to install dependencies.<br />
 3.  Now you can run `npm start` to see the example app at `http://localhost:8080`
 
@@ -14,30 +14,31 @@
 - Redux Saga
 - Immer
 
-### Custom Component  
+### Custom Component
 
 ```
   - Table Component (Used for Working on Table Easily,Dynamically).
 
 
 ```
-### Custom Hooks 
+
+### Custom Hooks
 
 ```
-  - usePagination (Used for Working on Pagination Easily without Writing all the Logic 
+  - usePagination (Used for Working on Pagination Easily without Writing all the Logic
                   repetitively).
 
 
 ```
-### Usefull Util Functions 
+
+### Useful Util Functions
 
 ```
-  - sortByKey (Used for sorting any array of object with a key given to it and 
-              the key can be made dynamic aswell).
+  - sortByKey (Used for sorting any array of object with a key given to it and
+              the key can be made dynamic as well).
 
 
 ```
-
 
 ### Folder Structure
 
@@ -47,15 +48,17 @@
     -- assets/              -->  for static assets and styles
     -- components/          -->  for components
         -- common/          -->  for shared components
-        -- customHooks/     -->  for custom hooks
+    -- hooks/               -->  for custom hooks
     -- reducers/            -->  for redux reducers
     -- routes/              -->  for all routes
     -- sagas/               -->  for redux sagas
+    -- selectors/           -->  for getting derived state from store
     -- services/            -->  for api requests
     -- utils/               -->  for utility / helper functions
     -- views/               -->  for page specific components / container components
 
 ```
 
-### [Help] 
->If you are having problem using any of those mentioned features (utils,customHook,component) feel free to tell anyone in the frontend channel.
+### [Help]
+
+> If you are having problem using any of those mentioned features (utils, hooks, components) feel free to tell anyone in the frontend channel.
