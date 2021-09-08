@@ -16,13 +16,15 @@ const startAction = (state, { payload }) => ({
     actions: [...state.loader.actions, payload.action],
   },
 });
-const stopAction = (state, { payload }) => ({
-  ...state,
-  loader: {
-    ...state.loader,
-    actions: state.loader.actions.filter((action) => JSON.stringify(action) !== JSON.stringify(payload)),
-  },
-});
+const stopAction = (state, { payload }) => {
+  return {
+    ...state,
+    loader: {
+      ...state.loader,
+      actions: state.loader.actions.filter((action) => JSON.stringify(action) !== JSON.stringify(payload.action)),
+    },
+  };
+};
 const refreshActionStart = (state, { payload }) => ({
   ...state,
   loader: {

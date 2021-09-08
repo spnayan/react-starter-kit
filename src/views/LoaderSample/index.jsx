@@ -8,10 +8,10 @@ import loaderGif from '@Assets/image/smallloader.gif';
 function Index({ getDashboardRequest, getMoreContentRequest, randomCharacters, randomNumbers, dashboardData }) {
   const isDashboardLoading = useSelector((state) => checkIfLoading(state, { actionName: Types.GET_DASHBOARD_REQUEST }));
   const isRandomCharacterLoading = useSelector((state) =>
-    checkIfLoading(state, { actionName: Types.GET_MORE_CONTENT_REQUEST, key: 'randomCharacter' }),
+    checkIfLoading(state, { actionName: Types.GET_MORE_CONTENT_REQUEST, key: 'randChar' }),
   );
   const isRandomNumberLoading = useSelector((state) =>
-    checkIfLoading(state, { actionName: Types.GET_MORE_CONTENT_REQUEST, key: 'randomNumber' }),
+    checkIfLoading(state, { actionName: Types.GET_MORE_CONTENT_REQUEST, key: 'randNum' }),
   );
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function Index({ getDashboardRequest, getMoreContentRequest, randomCharacters, r
           <button
             type="button"
             className="btn btn-lg btn-primary"
-            onClick={() => getMoreContentRequest('randomCharacter')}
+            onClick={() => getMoreContentRequest('randomCharacter', 'randChar')}
             tabIndex="0"
           >
             Get More Random Character
@@ -49,7 +49,7 @@ function Index({ getDashboardRequest, getMoreContentRequest, randomCharacters, r
           <button
             type="button"
             className="btn btn-lg btn-primary "
-            onClick={() => getMoreContentRequest('randomNumber')}
+            onClick={() => getMoreContentRequest('randomNumber', 'randNum')}
             tabIndex="0"
           >
             Get More Random Number
@@ -63,7 +63,7 @@ function Index({ getDashboardRequest, getMoreContentRequest, randomCharacters, r
 const mapDispatchToProps = (dispatch) => {
   return {
     getDashboardRequest: (payload) => dispatch(loaderSampleActions.getDashboardRequest(payload)),
-    getMoreContentRequest: (payload) => dispatch(loaderSampleActions.getMoreContentRequest(payload)),
+    getMoreContentRequest: (payload, key) => dispatch(loaderSampleActions.getMoreContentRequest(payload, key)),
   };
 };
 
