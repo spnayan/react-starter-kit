@@ -1,13 +1,16 @@
 import Login from '../views/Login';
 import Register from '../views/Register';
 import Dashboard from '../views/Dashboard';
+import Users from '../views/Users';
 import Topic from '../views/Topic';
 import SubTopic from '../views/SubTopic';
 import LoaderSample from '../views/LoaderSample';
 
 const indexRoutes = [
   { path: '/login', name: 'Login', component: Login },
+
   { path: '/register', name: 'Register', component: Register },
+  { path: '/users', name: 'Users', component: Users },
   {
     path: '/topics',
     name: 'Topic',
@@ -16,6 +19,7 @@ const indexRoutes = [
       { path: null, name: 'Topic', component: Topic },
     ],
   },
+
   { path: '/actionloader', name: 'Loaders', component: LoaderSample },
   {
     path: '/',

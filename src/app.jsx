@@ -37,6 +37,9 @@ function App() {
             <Link to="/topics">Topic</Link>
           </li>
           <li>
+            <Link to="/users">Users</Link>
+          </li>
+          <li>
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
