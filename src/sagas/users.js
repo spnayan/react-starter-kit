@@ -1,17 +1,18 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { REQUEST_USER_DATA, receiveUserData } from '../actions/users';
+import usersActions, { Types } from '../actions/users';
+
 import fetchData from '../services/users';
 
 export function* getUserData() {
   try {
     const data = yield call(fetchData);
 
-    yield put(receiveUserData(data));
+    yield put(usersActions.receiveUserData(data));
   } catch (error) {
-    console.log(error);
+    yield put(usersActions.getUserFailure());
   }
 }
 
 export default function* userWatcher() {
-  yield takeLatest(REQUEST_USER_DATA, getUserData);
+  yield takeLatest(Types.REQUEST_USER_DATA, getUserData);
 }

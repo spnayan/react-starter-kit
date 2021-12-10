@@ -18,8 +18,6 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/forbid-prop-types": "off",
-    "no-console": "off",
-    "consistent-return": "off",
     "react/prop-types": "off"
   }
 }

@@ -1,13 +1,11 @@
-// import { createActions } from 'reduxsauce';
+// export const receiveUserData = (data) => ({ type: RECEIVE_USER_DATA, data });
 
-// export const { Types, Creators } = createActions({
-//   getUser: ['payload'],
-// });
+import { createActions } from 'reduxsauce';
 
-// export default Creators;
+export const { Types, Creators } = createActions({
+  requestUserData: ['payload'],
+  receiveUserData: ['payload'],
+  getUserFailure: ['payload'],
+});
 
-export const REQUEST_USER_DATA = 'REQUEST_USER_DATA';
-export const RECEIVE_USER_DATA = 'RECEIVE_USER_DATA';
-
-export const requestUserData = () => ({ type: REQUEST_USER_DATA });
-export const receiveUserData = (data) => ({ type: RECEIVE_USER_DATA, data });
+export default Creators;

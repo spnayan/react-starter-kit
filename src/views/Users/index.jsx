@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { requestUserData } from '@Actions/users';
+import usersActions from '@Actions/users';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '@Components/common/Card/index';
 import Loader from '@Components/common/Loader/index';
@@ -9,17 +9,16 @@ const Users = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(requestUserData());
+    dispatch(usersActions.requestUserData());
   }, [dispatch]);
 
   const data = useSelector((state) => state.users);
-  console.log(data);
 
   return (
     <div>
       {data.length > 0 ? (
         <div className="card-wrapper">
-          {data.map((user) => {
+          {data[0].payload.map((user) => {
             return <Card key={user.id} user={user} />;
           })}
         </div>
