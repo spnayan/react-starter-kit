@@ -12,13 +12,13 @@ const Users = () => {
     dispatch(usersActions.requestUserData());
   }, [dispatch]);
 
-  const data = useSelector((state) => state.users);
-
+  const dataObj = useSelector((state) => state.users);
+  const data = dataObj.users;
   return (
     <div>
       {data.length > 0 ? (
         <div className="card-wrapper">
-          {data[0].payload.map((user) => {
+          {data.map((user) => {
             return <Card key={user.id} user={user} />;
           })}
         </div>

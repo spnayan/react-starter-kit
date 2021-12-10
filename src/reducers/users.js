@@ -1,17 +1,19 @@
 import { createReducer } from 'reduxsauce';
 import { Types } from '@Actions/users';
 
-const initialState = [];
+const initialState = {
+  users: [],
+  loading: false,
+};
 
-const requestUserData = (state) => state;
+const requestUserData = (state) => ({ ...state, loading: true });
 
-const receiveUserData = (state, data) => {
-  return [...state, data];
+const receiveUserData = (state, action) => {
+  return { ...state, loading: false, users: action.payload };
 };
 
 const getUserFailure = (state) => ({
   ...state,
-  loading: false,
 });
 
 const userReducer = createReducer(initialState, {
