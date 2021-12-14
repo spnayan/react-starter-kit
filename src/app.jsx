@@ -40,6 +40,9 @@ function App() {
             <Link to="/users">Users</Link>
           </li>
           <li>
+            <Link to="/keyhighlights">Key Highlights</Link>
+          </li>
+          <li>
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>

@@ -8,6 +8,7 @@ import topic from './topic';
 import loader from './loader.reducer';
 import loadersample from './loadersample';
 import users from './users';
+import projects from './projects';
 
 export default combineReducers({
   router: connectRouter(history),
@@ -18,4 +19,5 @@ export default combineReducers({
   loader,
   loadersample,
   users,
+  projects,
 });

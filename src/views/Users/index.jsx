@@ -9,7 +9,7 @@ const Users = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(usersActions.requestUserData());
+    dispatch(usersActions.getUserData());
   }, [dispatch]);
 
   const dataObj = useSelector((state) => state.users);

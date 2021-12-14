@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper a {
+  text-decoration: none;
+  display: block;
+}
+
+.highlight-box {
+  min-width: 500px;
+  width: 40%;
+  font-size: small;
+  background: #0000ff;
+  margin: 40px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.highlight-box:hover {
+  transform: translateY(-10px);
+}
+
+.highlight-content-wrap {
+  padding: 20px;
+}
+
+.highlight-body row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.highlight-body {
+  font-size: xx-small;
+}
+
+.highlight-body h5 {
+  color: #fdb838;
+}
+
+figure img {
+  width: 100%;
+}

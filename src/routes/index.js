@@ -5,12 +5,16 @@ import Users from '../views/Users';
 import Topic from '../views/Topic';
 import SubTopic from '../views/SubTopic';
 import LoaderSample from '../views/LoaderSample';
+import KeyHighlights from '../views/KeyHighlights';
+import KeyHighlightsDetails from '../views/KeyHighlights/KeyHighlightsDetails';
 
 const indexRoutes = [
   { path: '/login', name: 'Login', component: Login },
 
   { path: '/register', name: 'Register', component: Register },
   { path: '/users', name: 'Users', component: Users },
+  { path: '/keyhighlights/:id', name: 'KeyDetails', component: KeyHighlightsDetails },
+  { path: '/keyhighlights', name: 'Key Highlights', component: KeyHighlights },
   {
     path: '/topics',
     name: 'Topic',

@@ -3,8 +3,8 @@
 import { createActions } from 'reduxsauce';
 
 export const { Types, Creators } = createActions({
-  requestUserData: ['payload'],
-  receiveUserData: ['payload'],
+  getUserData: ['payload'],
+  getUserSuccess: ['payload'],
   getUserFailure: ['payload'],
 });
 

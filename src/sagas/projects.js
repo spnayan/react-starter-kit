@@ -1,11 +1,11 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import loaderActions from '@Actions/loader.actions';
 import toastActions from '@Actions/toast';
-import usersActions, { Types } from '../actions/users';
+import projectsActions, { Types } from '../actions/projects';
 
-import fetchData from '../services/users';
+import fetchProjects from '../services/projects';
 
-export function* getUserData(action) {
+export function* getProjectsData(action) {
   const { type } = action;
   try {
     yield put(
@@ -15,11 +15,11 @@ export function* getUserData(action) {
         },
       }),
     );
-    const data = yield call(fetchData);
-    yield put(usersActions.getUserSuccess(data));
-    yield put(toastActions.success({ message: 'Users Successfully fetched' }));
+    const data = yield call(fetchProjects);
+    yield put(projectsActions.getProjectsSuccess(data));
+    yield put(toastActions.success({ message: 'Projects Successfully fetched' }));
   } catch (error) {
-    yield put(usersActions.getUserFailure());
+    yield put(projectsActions.getProjectsFailure());
     yield put(toastActions.error({ message: error?.response?.data?.message }));
   } finally {
     yield put(
@@ -30,6 +30,6 @@ export function* getUserData(action) {
   }
 }
 
-export default function* userWatcher() {
-  yield takeLatest(Types.GET_USER_DATA, getUserData);
+export default function* projectWatcher() {
+  yield takeLatest(Types.GET_PROJECTS_REQUEST, getProjectsData);
 }

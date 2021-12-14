@@ -6,9 +6,9 @@ const initialState = {
   loading: false,
 };
 
-const requestUserData = (state) => ({ ...state, loading: true });
+const getUserData = (state) => ({ ...state, loading: true });
 
-const receiveUserData = (state, action) => {
+const getUserSuccess = (state, action) => {
   return { ...state, loading: false, users: action.payload };
 };
 
@@ -17,8 +17,8 @@ const getUserFailure = (state) => ({
 });
 
 const userReducer = createReducer(initialState, {
-  [Types.REQUEST_USER_DATA]: requestUserData,
-  [Types.RECEIVE_USER_DATA]: receiveUserData,
+  [Types.GET_USER_DATA]: getUserData,
+  [Types.GET_USER_SUCCESS]: getUserSuccess,
   [Types.GET_USER_FAILURE]: getUserFailure,
 });
 

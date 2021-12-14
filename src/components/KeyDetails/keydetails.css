@@ -1,0 +1,32 @@
+.detail-wrapper {
+  background-color: antiquewhite;
+  margin-top: 50px;
+}
+
+.header img {
+  height: 200px;
+  width: 200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-content {
+  padding: 20px;
+}
+
+.sub-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.sub-content h6 {
+  color: burlywood;
+}
+
+.description {
+  padding: 20px;
+  text-align: justify;
+}
