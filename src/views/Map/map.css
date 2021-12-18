@@ -1,0 +1,27 @@
+.map {
+  width: 80%;
+  height: 500px;
+
+  /* position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; */
+
+  border: 1px solid blue;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+  grid-template-rows: 100vh;
+  margin-top: 40px;
+}
+
+.sidebar {
+  margin-left: 15px;
+}
+
+input {
+  display: block;
+}
