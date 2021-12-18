@@ -1,0 +1,37 @@
+.nav-wrapper {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: #edf0f1;
+}
+
+.nav-wrapper > h3 {
+  cursor: pointer;
+  padding: 20px;
+}
+
+.nav-wrapper > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-wrapper > ul > li {
+  display: inline-block;
+  padding: 0px, 20px;
+}
+
+.nav-wrapper > ul > li > a:hover {
+  color: rgb(175, 175, 211);
+}
+
+.nav-wrapper > ul > li > a {
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  display: block;
+  text-decoration: none;
+  padding: 8px;
+}

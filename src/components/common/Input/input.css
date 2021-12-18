@@ -1,0 +1,36 @@
+.label {
+  display: block;
+  width: 100%;
+  padding: 5px;
+}
+
+.label input[type='text'],
+input[type='submit'],
+input[type='file'] {
+  box-sizing: border-box;
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0px;
+  border: 0.5px solid grey;
+}
+
+.label input[type='submit'] {
+  border: none;
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.label input[type='text']:focus {
+  border: 2px solid aqua;
+}
+.label span {
+  font-size: 12px;
+  padding: 5px;
+  color: red;
+}
+
+.label input:invalid ~ span {
+  display: block;
+}

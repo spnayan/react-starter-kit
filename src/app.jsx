@@ -4,7 +4,9 @@ import { hot } from 'react-hot-loader';
 import { Switch, Route, Link } from 'react-router-dom';
 import PrivateRoute from '@Components/common/PrivateRoute';
 import Toast from '@Components/common/Toast';
+
 import indexRoutes from './routes';
+import './app.css';
 
 function generateRoutes(routes) {
   return (
@@ -27,8 +29,8 @@ function generateRoutes(routes) {
 function App() {
   return (
     <div className="container">
-      <Toast />
       <nav className="nav-wrapper">
+        <h3>NAXA</h3>
         <ul>
           <li>
             <Link to="/actionloader">Loader</Link>
@@ -43,10 +45,17 @@ function App() {
             <Link to="/keyhighlights">Key Highlights</Link>
           </li>
           <li>
+            <Link to="/map">Map</Link>
+          </li>
+          <li>
             <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/form">Apply</Link>
           </li>
         </ul>
       </nav>
+      <Toast />
       {generateRoutes(indexRoutes)}
     </div>
   );
